@@ -26,20 +26,18 @@
 </head>
 <body class="bg-slate-950 text-white">
     <style>
-        .prj1{
-            margin-left:10vw;
-            width: 32vw;
-            height: 20vw;
-        }
-        .prj2{
-            margin-right:10vw;
-            width: 32vw;
-            height: 20vw;
-        }
-        .img1{
-            width: 32vw;
-            height: 20vw;
-        }
+      .prj {
+        width: 100%;
+        height: auto;
+      }
+
+      .prj img {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+        object-fit: cover;
+      }
+
     </style>
   <!-- Navbar -->
   <header class="fixed w-full bg-slate-900/80 backdrop-blur z-50">
@@ -56,15 +54,20 @@
   </header>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden fixed inset-0 bg-slate-900 flex flex-col items-center justify-center gap-8 text-xl">
-    <a href="#home" onclick="toggleMenu()">Home</a>
-    <a href="#services" onclick="toggleMenu()">Services</a>
-    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
-    <a href="#contact" onclick="toggleMenu()">Contact</a>
-  </div>
+ <div id="mobileMenu"
+  class="hidden fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center gap-10 text-2xl">
+  
+  <button onclick="toggleMenu()" class="absolute top-6 right-6 text-3xl">✕</button>
+
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
 
   <!-- Hero Section -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+  <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-4 md:px-6 overflow-hidden">
     <canvas id="bg3d" class="absolute inset-0"></canvas>
     <div class="relative z-10">
       <h2 class="text-4xl md:text-6xl font-bold mb-6">Grow Your Business with <span class="text-indigo-400">Freweb</span></h2>
@@ -106,18 +109,20 @@
   <section id="portfolio" class="py-20">
     <div class="max-w-7xl mx-auto px-6">
       <h3 class="text-3xl font-bold text-center mb-12">Our Work</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-slate-800 h-56 rounded-xl flex items-center justify-center text-gray-400 prj1">
-            <a href="https://mukesh2776.github.io/Amazon-clone-/" target="_blank">
-                <img src="Amazon.png" alt="Amazon Clone" class="img1 object-cover rounded-xl" >
-            </a>
-        </div>
-        <div class="bg-slate-800 h-56 rounded-xl flex items-center justify-center text-gray-400 prj2">
-            <a href="https://jioresume.com/" target="_blank">
-                <img src="resumebuilder.png"  alt="Resume Builder" class="img1 object-cover rounded-xl"  >
-            </a>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-slate-800 rounded-xl p-4 prj">
+        <a href="https://mukesh2776.github.io/Amazon-clone-/" target="_blank">
+          <img src="Amazon.png" alt="Amazon Clone" class="rounded-xl">
+        </a>
       </div>
+
+      <div class="bg-slate-800 rounded-xl p-4 prj">
+        <a href="https://jioresume.com/" target="_blank">
+          <img src="resumebuilder.png" alt="Resume Builder" class="rounded-xl">
+        </a>
+      </div>
+    </div>
+
     </div>
   </section>
 
