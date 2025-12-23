@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freweb | Freelancing Web Company</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+  <!-- Three.js for 3D -->
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+<body class="bg-slate-950 text-white">
+    <style>
+        .prj1{
+            margin-left:10vw;
+            width: 32vw;
+            height: 20vw;
+        }
+        .prj2{
+            margin-right:10vw;
+            width: 32vw;
+            height: 20vw;
+        }
+        .img1{
+            width: 32vw;
+            height: 20vw;
+        }
+    </style>
+  <!-- Navbar -->
+  <header class="fixed w-full bg-slate-900/80 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-400">Freweb</h1>
+      <nav class="hidden md:flex gap-6 text-gray-300">
+        <a href="#home" class="hover:text-white">Home</a>
+        <a href="#services" class="hover:text-white">Services</a>
+        <a href="#portfolio" class="hover:text-white">Portfolio</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <button class="md:hidden" id="menuBtn"><i data-feather="menu"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden fixed inset-0 bg-slate-900 flex flex-col items-center justify-center gap-8 text-xl">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+    <canvas id="bg3d" class="absolute inset-0"></canvas>
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">Grow Your Business with <span class="text-indigo-400">Freweb</span></h2>
+      <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+        We build modern, responsive, and affordable websites for startups, shops, and entrepreneurs.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#contact" class="bg-indigo-500 hover:bg-indigo-600 px-8 py-3 rounded-xl font-semibold">Get a Website</a>
+        <a href="#portfolio" class="border border-indigo-500 px-8 py-3 rounded-xl hover:bg-indigo-500">View Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">Our Services</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 p-8 rounded-2xl hover:scale-105 transition">
+          <i data-feather="layout" class="text-indigo-400 mb-4"></i>
+          <h4 class="text-xl font-semibold mb-2">Website Design</h4>
+          <p class="text-gray-400">Clean and modern UI/UX designs that convert visitors into customers.</p>
+        </div>
+        <div class="bg-slate-800 p-8 rounded-2xl hover:scale-105 transition">
+          <i data-feather="code" class="text-indigo-400 mb-4"></i>
+          <h4 class="text-xl font-semibold mb-2">Web Development</h4>
+          <p class="text-gray-400">Fast, SEO-friendly, and scalable websites using modern technologies.</p>
+        </div>
+        <div class="bg-slate-800 p-8 rounded-2xl hover:scale-105 transition">
+          <i data-feather="smartphone" class="text-indigo-400 mb-4"></i>
+          <h4 class="text-xl font-semibold mb-2">Responsive Design</h4>
+          <p class="text-gray-400">Perfect performance on mobile, tablet, and desktop devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">Our Work</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-slate-800 h-56 rounded-xl flex items-center justify-center text-gray-400 prj1">
+            <a href="https://mukesh2776.github.io/Amazon-clone-/" target="_blank">
+                <img src="Amazon.png" alt="Amazon Clone" class="img1 object-cover rounded-xl" >
+            </a>
+        </div>
+        <div class="bg-slate-800 h-56 rounded-xl flex items-center justify-center text-gray-400 prj2">
+            <a href="https://jioresume.com/" target="_blank">
+                <img src="resumebuilder.png"  alt="Resume Builder" class="img1 object-cover rounded-xl"  >
+            </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
+      <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Interested in working together? Fill out the form below and we'll get back to you as soon as possible.
+      </p>
+    </div>
+   <form id="contactForm" class="bg-slate-800 p-8 rounded-2xl space-y-4">
+  <input
+    type="text"
+    name="from_name"
+    placeholder="Your Name"
+    required
+    class="w-full p-3 rounded bg-slate-700 "
+  />
+
+  <input
+    type="email"
+    name="from_email"
+    placeholder="Email Address"
+    required
+    class="w-full p-3 rounded bg-slate-700 outline-none"
+  />
+
+  <textarea
+    name="message"
+    placeholder="Tell us about your project"
+    required
+    class="w-full p-3 rounded bg-slate-700 outline-none"
+  ></textarea>
+
+  <button
+    type="submit"
+    class="w-full bg-indigo-500 hover:bg-indigo-600 py-3 rounded-xl font-semibold"
+  >
+    Send Message
+  </button>
+</form>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-400">
+    © 2025 Freweb. All rights reserved.
+  </footer>
+
+  <script>
+    feather.replace();
+
+    const menu = document.getElementById('mobileMenu');
+    function toggleMenu() {
+      menu.classList.toggle('hidden');
+    }
+    document.getElementById('menuBtn').addEventListener('click', toggleMenu);
+    /* 3D Background */
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg3d'), alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const geometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
+  const material = new THREE.MeshStandardMaterial({ color: 0x6366f1, wireframe: true });
+  const torus = new THREE.Mesh(geometry, material);
+  scene.add(torus);
+
+  const light = new THREE.PointLight(0xffffff);
+  light.position.set(5, 5, 5);
+  scene.add(light);
+
+  camera.position.z = 4;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    torus.rotation.x += 0.01;
+    torus.rotation.y += 0.01;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  /* EmailJS */
+  (function(){ emailjs.init(
+  '_R8sVb94pwcJmS27r'
+);
+})();
+
+ document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    'service_51bfdwi',
+    'template_cy8i1e8',
+    this
+  )
+  .then(() => {
+    alert('✅ Message sent successfully!');
+    this.reset();
+  })
+  .catch((error) => {
+    console.error('EmailJS Error:', error);
+    alert('❌ Failed to send message');
+  });
+});
+
+</script>
+</body>
+</html>
